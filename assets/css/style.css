@@ -3,6 +3,10 @@
   background-size: cover;
 }
 
+.jumbotron h1 {
+  text-align: center;
+}
+
 .jumbotron p {
   color: red;
   text-align: center;

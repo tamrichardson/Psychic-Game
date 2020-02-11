@@ -22,15 +22,37 @@
     <title>Word Guess | Tammy Richardson</title>
   </head>
 
+  <script>
+    //array of movie titles
+    var movieNames = ["pulp fiction", "matrix", "titanic", "jurassic park", "scream", "empire records", "last action hero", "12 monkeys", "the sandlot", "jumanji", "edward scissorhands", "forrest gump", "the sixth sense", "fargo", "saving private ryan", "the usual suspects", "reservoir dogs", "trainspotting"]
+
+    //this will pick a random title to start
+    var title = movieNames[Math.floor(Math.random() * movieNames.length)];
+
+    //sets up answerArray to show how many letters are in the title
+    //using under scores
+    var answerArray =[];
+    for (var i = 0; i < movieName.length; i++) {
+          answerArray[i] = "_";
+    }
+
+    // variable to show the number of remaining letters to be guessed
+    var remaimingLetters = movieName. length;
+
+    
+
+
+</script>
+
   <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h1 class="display-4 text-warning">Let's Play Word Guess!</h1>
-        <p class="lead">Join me for a 90's movie themed game of Hangman.</p>
-        <hr class="my-4" />
-        <a class="btn btn-warning btn-lg" href="#" role="button"
-          >Click To Play</a
-        >
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4 text-warning">Let's Play Word Guess!</h1>
+          <p class="lead">Join me for a 90's movie themed game of Hangman.</p>
+          <hr class="my-4" />
+          <a class="btn btn-warning btn-lg" href="#" role="button"
+            >Click To Play</a>
+         </div>
       </div>
     </div>
   </body>
