@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="assets\css\style.css" />
 
+    <script src="assets\javascript\game.js"></script>
+
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
@@ -22,38 +24,72 @@
     <title>Word Guess | Tammy Richardson</title>
   </head>
 
-  <script>
-    //array of movie titles
-    var movieNames = ["pulp fiction", "matrix", "titanic", "jurassic park", "scream", "empire records", "last action hero", "12 monkeys", "the sandlot", "jumanji", "edward scissorhands", "forrest gump", "the sixth sense", "fargo", "saving private ryan", "the usual suspects", "reservoir dogs", "trainspotting"]
-
-    //this will pick a random title to start
-    var title = movieNames[Math.floor(Math.random() * movieNames.length)];
-
-    //sets up answerArray to show how many letters are in the title
-    //using under scores
-    var answerArray =[];
-    for (var i = 0; i < movieName.length; i++) {
-          answerArray[i] = "_";
-    }
-
-    // variable to show the number of remaining letters to be guessed
-    var remaimingLetters = movieName. length;
-
-    
-
-
-</script>
-
   <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4 text-warning">Let's Play Word Guess!</h1>
           <p class="lead">Join me for a 90's movie themed game of Hangman.</p>
           <hr class="my-4" />
-          <a class="btn btn-warning btn-lg" href="#" role="button"
-            >Click To Play</a>
          </div>
       </div>
     </div>
-  </body>
+ 
+    <div class="row row-cols-1 row-cols-md-4">
+        <div class="col mb-4">
+          <div class="card">
+            <img src="assets\images\goodfellas1-640x798.jpeg" class="card-img-top" alt="GoodFellas">
+          </div>
+        </div>
+
+        <div class="col mb-4"></div>
+     
+        <div class="col mb-4"></div>
+
+         <div class="col mb-4">
+            <div class="card">
+                <img src="assets\images\c8c6806f640a362acea0d1b9c0c01f39--tommy-boy-coats.jpg" class="card-img-top" alt="Tommy Boy">
+               </div>
+       
+            </div>
+            <div class="col mb-4">
+                <div class="card">
+                  <img src="assets\images\fight club.jpg" class="card-img-top" alt="Fight Club">
+                </div>
+              </div>
+      
+              <div class="col mb-4"></div>
+           
+              <div class="col mb-4"></div>
+      
+              <div class="col mb-4">
+                  <div class="card">
+                      <img src="assets\images\The-Silence-of-the-Lambs-900x0-c-default.jpg" class="card-img-top" alt="SOTL">
+                     </div>
+              </div>
+
+                     <div class="col mb-4">
+                        <div class="card">
+                          <img src="assets\images\Big Lebowski.jpg" class="card-img-top" alt="Lebowski">
+                        </div>
+                      </div>
+              
+                      <div class="col mb-4"></div>
+                   
+                      <div class="col mb-4"></div>
+              
+                       <div class="col mb-4">
+                          <div class="card">
+                              <img src="assets\images\10 things.jpg" class="card-img-top" alt="10 Things">
+                             </div>
+             
+                  </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+</div>
+</body>
 </html>
