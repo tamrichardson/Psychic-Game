@@ -29,7 +29,7 @@ var wordStatus = null;
 var wins = 0;
 var loses = 0;
 var totalWins = 5;
-var totalLoses = 5;
+var totalLosses = 5;
 
 
 //this will pick a random title to start
@@ -56,12 +56,14 @@ function handleGuess(chosenLetter) {
     guessedWord();
     checkIfWon();
     updateWins();
+    updatetotalWins();
   } else if (answer.indexOf(chosenLetter) === -1) {
     mistakes++;
-    loses++;
+    losses++;
     updateMistakes();
     checkIfLost();
-    updateLoses();
+    updateLosses();
+    updatetotalLosses();
   }
 }
 //this function is checking to see if the word guessed matches the answer. if it does a congratulation message will be displayed in place of the keyboard
@@ -93,6 +95,19 @@ function updateMistakes() {
   document.getElementById("mistakes").innerHTML = mistakes;
 }
 
+function updateWins() {
+  document.getElementById("wins").innerHTML = wins;
+}
+function updateLosses() {
+  document.getElementById("losses").innerHTML = loses;
+}
+
+function updatetotalWins() {
+  document.getElementById("totalWins").innerHTML = wins;
+}
+function updatetotalLosses() {
+  document.getElementById("totalLosses").innerHTML = loses;
+}
 //this function resets the game
 function newGame() {
   mistakes = 0;
