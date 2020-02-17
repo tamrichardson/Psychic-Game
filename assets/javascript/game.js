@@ -27,7 +27,7 @@ var mistakes = 0;
 var guessed = [];
 var wordStatus = null;
 var wins = 0;
-var loses = 0;
+var losses = 0;
 var totalWins = 5;
 var totalLosses = 5;
 
@@ -52,14 +52,12 @@ function handleGuess(chosenLetter) {
   document.getElementById(chosenLetter).setAttribute("disabled", true);
 
   if (answer.indexOf(chosenLetter) >= 0) {
-    wins++;
     guessedWord();
     checkIfWon();
     updateWins();
     updatetotalWins();
   } else if (answer.indexOf(chosenLetter) === -1) {
     mistakes++;
-    losses++;
     updateMistakes();
     checkIfLost();
     updateLosses();
@@ -70,6 +68,7 @@ function handleGuess(chosenLetter) {
 function checkIfWon() {
   if (wordStatus === answer) {
     document.getElementById("keyboard").innerHTML = "CONGRATULATIONS!!!!";
+    wins++
   }
 }
 
@@ -77,8 +76,9 @@ function checkIfWon() {
 //this function is checking to see if the number of mistakes is equal to the number of alotted incorrect choices. it is alos displaying a you lost message in place of the keyboard and the correct answer in place of the word to be guessed area.
 function checkIfLost() {
   if (mistakes === maxWrong) {
-    document.getElementById("wordSpotlight").innerHTML = "THE ANSWER WAS: " + answer;
+    document.getElementById("movieTitle").innerHTML = "THE ANSWER WAS: " + answer;
     document.getElementById("keyboard").innerHTML = "YOU LOST TRY AGAIN!!!!";
+    losses++
   }
 
 
@@ -88,7 +88,7 @@ function checkIfLost() {
 function guessedWord() {
   wordStatus = answer.split("").map((letter) => (guessed.indexOf(letter) >= 0 ? letter : " _ "))
     .join("");
-  document.getElementById("wordSpotlight").innerHTML = wordStatus;
+  document.getElementById("movieTitle").innerHTML = wordStatus;
 }
 
 function updateMistakes() {
@@ -99,14 +99,14 @@ function updateWins() {
   document.getElementById("wins").innerHTML = wins;
 }
 function updateLosses() {
-  document.getElementById("losses").innerHTML = loses;
+  document.getElementById("losses").innerHTML = losses;
 }
 
 function updatetotalWins() {
   document.getElementById("totalWins").innerHTML = wins;
 }
 function updatetotalLosses() {
-  document.getElementById("totalLosses").innerHTML = loses;
+  document.getElementById("totalLosses").innerHTML = losses;
 }
 //this function resets the game
 function newGame() {
