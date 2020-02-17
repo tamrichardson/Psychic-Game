@@ -22,10 +22,15 @@ var movieNames = [
 
 
 var answer = "";
-var maxWrong = 15;
+var maxWrong = 10;
 var mistakes = 0;
 var guessed = [];
 var wordStatus = null;
+var wins = 0;
+var loses = 0;
+var totalWins = 5;
+var totalLoses = 5;
+
 
 //this will pick a random title to start
 function randomTitle() {
@@ -47,11 +52,35 @@ function handleGuess(chosenLetter) {
   document.getElementById(chosenLetter).setAttribute("disabled", true);
 
   if (answer.indexOf(chosenLetter) >= 0) {
+    wins++;
     guessedWord();
+    checkIfWon();
+    updateWins();
   } else if (answer.indexOf(chosenLetter) === -1) {
     mistakes++;
+    loses++;
     updateMistakes();
+    checkIfLost();
+    updateLoses();
   }
+}
+//this function is checking to see if the word guessed matches the answer. if it does a congratulation message will be displayed in place of the keyboard
+function checkIfWon() {
+  if (wordStatus === answer) {
+    document.getElementById("keyboard").innerHTML = "CONGRATULATIONS!!!!";
+  }
+}
+
+
+//this function is checking to see if the number of mistakes is equal to the number of alotted incorrect choices. it is alos displaying a you lost message in place of the keyboard and the correct answer in place of the word to be guessed area.
+function checkIfLost() {
+  if (mistakes === maxWrong) {
+    document.getElementById("wordSpotlight").innerHTML = "THE ANSWER WAS: " + answer;
+    document.getElementById("keyboard").innerHTML = "YOU LOST TRY AGAIN!!!!";
+  }
+
+
+
 }
 //check if the letter exist in the title
 function guessedWord() {
@@ -63,6 +92,19 @@ function guessedWord() {
 function updateMistakes() {
   document.getElementById("mistakes").innerHTML = mistakes;
 }
+
+//this function resets the game
+function newGame() {
+  mistakes = 0;
+  guessed = [];
+
+  //theses request a new random title, updates the to be guessed dashes, resets mistake counter and generates a new keyboard so buttons clicked are no longer diabled
+  randomTitle();
+  guessedWord();
+  updateMistakes();
+  generateButtons();
+}
+
 
 document.getElementById("maxWrong").innerHTML = maxWrong;
 
