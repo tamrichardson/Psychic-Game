@@ -17,7 +17,7 @@ var movieNames = [
   "seven",
   "casino",
   "gattaca",
-  "magnolia"
+  "magnolia",
 ];
 
 
@@ -28,8 +28,8 @@ var guessed = [];
 var wordStatus = null;
 var wins = 0;
 var losses = 0;
-var totalWins = 5;
-var totalLosses = 5;
+var totalWins = 0;
+var totalLosses = 0;
 
 
 //this will pick a random title to start
@@ -46,7 +46,8 @@ function generateButtons() {
   document.getElementById("keyboard").innerHTML = buttonsHTML;
 }
 
-//disable buttons after clicked so the cannot be clicked again
+//disable buttons after clicked so they cannot be clicked again. 
+//buttons are "grayed out" to show which ones have already been selected.
 function handleGuess(chosenLetter) {
   guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
   document.getElementById(chosenLetter).setAttribute("disabled", true);
@@ -64,20 +65,20 @@ function handleGuess(chosenLetter) {
     updatetotalLosses();
   }
 }
-//this function is checking to see if the word guessed matches the answer. if it does a congratulation message will be displayed in place of the keyboard
+//this function is checking to see if the word guessed matches the answer. if it does a congratulation message will be displayed as an alert
 function checkIfWon() {
   if (wordStatus === answer) {
-    document.getElementById("keyboard").innerHTML = "CONGRATULATIONS!!!!";
+    alert("YOU WON! CONGRATULATIONS")
     wins++
   }
 }
 
 
-//this function is checking to see if the number of mistakes is equal to the number of alotted incorrect choices. it is alos displaying a you lost message in place of the keyboard and the correct answer in place of the word to be guessed area.
+//this function is checking to see if the number of mistakes is equal to the number of alotted incorrect choices. it is also displaying a you lost message as an alert
 function checkIfLost() {
   if (mistakes === maxWrong) {
     document.getElementById("movieTitle").innerHTML = "THE ANSWER WAS: " + answer;
-    document.getElementById("keyboard").innerHTML = "YOU LOST TRY AGAIN!!!!";
+    alert("YOU LOST TRY AGAIN!!!!")
     losses++
   }
 
