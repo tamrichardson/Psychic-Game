@@ -18,12 +18,12 @@
     <div class="container">
       <h1 class="display-2 text-warning">Let's Play Word Guess!</h1>
       <p class="lead">Join me for a 90's movie themed game of Hangman</p>
-      <hr class="my-4" />
+      
     </div>
   </div>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-6">
+  <div id="container2" class="row row-cols-1 row-cols-md-6">
       <div class="col md-2">
         <div class="card">
           <img src="assets\images\goodfellas1-640x798.jpeg" class="card-img-top" alt="GoodFellas">
@@ -41,7 +41,7 @@
         <h1 class="text-center text-danger" id="main-heading">Select a letter to begin!</h1>
       
       </div>
-      <div class="col md-2">
+      <div id="totals" class="col md-2">
         <div class="float-right text-warning">Wrong Guesses: <span id="mistakes">0</span> of <span id="maxWrong"></span></div>
         <div class="clear text-warning">Wins: <span id="wins">0</span> of <span id="totalWins"></span></div>
         <div class="clear text-warning">Loses: <span id="losses">0</span> of <span id="totalLosses"></span></div>
@@ -79,6 +79,9 @@
       </div>
 
       <div class="col md-2">
+        <div id="keyboard">
+
+        </div>
       </div>
 
       <div class="col md-2">
@@ -106,12 +109,12 @@
     </div>
 
     <div class="col md-2">
-      <div id="keyboard">
+      <button id="newGame" type="button" class="btn btn-success btn-lg btn-block" onClick="newGame()">Click to begin a new Game!</button>
       </div>
-    </div>
+   
     <div class="col md-2">
-      <button type="button" class="btn btn-success btn-lg btn-block" onClick="newGame()">Click to begin a new Game!</button>
     </div>
+    
     <div class="col md-2">
       <div class="card">
         <img src="assets\images\10 things.jpg" class="card-img-top" alt="10 Things">

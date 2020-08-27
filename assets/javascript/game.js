@@ -40,7 +40,7 @@ function randomTitle() {
 //create keyboard buttons and link letters to buttons
 function generateButtons() {
   var buttonsHTML = "abcdefghijklmnopqrstuvwxyz".split("").map((letter) =>
-    '<button class="btn btn-sm btn-danger m-1" id="' + letter + '" onClick="console.log(\'' + letter +
+    '<button class="btn btn-sm btn-danger" id="' + letter + '" onClick="console.log(\'' + letter +
     '\');handleGuess(\'' + letter + '\')">'
     + letter + '</button>').join(" ");
   document.getElementById("keyboard").innerHTML = buttonsHTML;
